@@ -2,6 +2,7 @@ import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-nativ
 import React, { useEffect } from 'react'
 import { useNavigation, useRouter } from 'expo-router'
 import { Colors } from '@/constants/Colors';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function SignIn() {
 
@@ -14,7 +15,10 @@ export default function SignIn() {
     }, [])
 
   return (
-    <View style={{padding: 25,paddingTop: 80, backgroundColor: Colors.WHITE, height: '100%'}}>
+    <View style={{padding: 25,paddingTop: 40, backgroundColor: Colors.WHITE, height: '100%'}}>
+        <TouchableOpacity onPress={() => router.back()}>
+            <Ionicons name="arrow-back" size={24} color="black" />
+        </TouchableOpacity>
         <Text style= {{
             fontFamily: 'outfit-bold',
             fontSize: 30,
@@ -23,7 +27,7 @@ export default function SignIn() {
             fontFamily: 'outfit',
             fontSize: 30,
             color: Colors.GRAY,
-            marginTop: 20,
+            marginTop: 30,
         }}>Welcome back</Text>
         <Text style= {{
             fontFamily: 'outfit',
